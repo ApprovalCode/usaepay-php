@@ -1,21 +1,18 @@
 <?php
-// USA ePay PHP Library.
+// Approval Code PHP Library.
 //      v1.6 
-//
-//      Copyright (c) 2002-2007 USA ePay
-//      For assistance please contact devsupport@usaepay.com
 //
 //  The following script uses the Test function to verify
 //  that your PHP installation can properly communicate with
-//  the USAePay Gateway.  If a problem is detected, potential
+//  the Approval Code Gateway.  If a problem is detected, potential
 //  solutions will be suggested.  If none of the suggestions
 //  work for you, please contact support for additional
 //  assistance.
 //
 
 
-// Change this path to match the location of your usaepay.php file
-include "/home/usaepay-php/usaepay.php";
+// Change this path to match the location of your approvalcode.php file
+include "/home/approvalcode-php/approvalcode.php";
 
 
 $tran=new umTransaction();

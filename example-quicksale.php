@@ -1,9 +1,6 @@
 <?php
-// USA ePay PHP Library.
+// Approval Code PHP Library.
 //      v1.6
-//
-//      Copyright (c) 2002-2008 USA ePay
-//      For support please contact devsupport@usaepay.com
 //
 //  The following is an example of running a quicksale, which is a new transaction
 //  against a prior sale or credit.  Credit card (or ACH) data is retrieved from
@@ -14,7 +11,7 @@
 //
 
 // Change this path to the location you have save usaepay.php to
-include "./usaepay.php";
+include "./approvalcode.php";
  
 $tran=new umTransaction;
  

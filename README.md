@@ -1,26 +1,18 @@
-USAePay PHP Library v1.6.12
+Approval Code PHP Library v1.6.12
 =================================
-Copyright 2013 USAePay, Inc.
 
-[http://www.usaepay.com](http://www.usaepay.com)
-
-[http://help.usaepay.com/developer/phplibrary](http://help.usaepay.com/developer/phplibrary)
+[http://www.approvalcode.com](http://www.approvalcode.com)
 
 SYNOPSIS
 --------
-The USAePay PHP library is a class for running transactions on the USAePay
-gateway.  Its feature set roughly follows the [transaction api](http://help.usaepay.com/developer/transaction).  If
-you are looking for more features, take a look at [soap api](http://help.usaepay.com/developer/soap/).
+The Approval Code PHP library is a class for running transactions on the USAePay
+gateway.  Its feature set roughly follows the transaction api.  If
+you are looking for more features, take a look at soap api.
 
 SUPPORT
 -------
-If you have any questions on the use of this library, please contact
-the developer integration support department:
-   devsupport@usaepay.com
-   866-872-3729 x706
-   
 For more documentation on using the library, please see
-http://help.usaepay.com/developer/phplibrary
+http://www.approvalcode.com
 
 
 
@@ -47,7 +39,7 @@ QUICK START
 --------------------
 
 	<?php
-	include "usaepay.php";
+	include "approvalcode.php";
 	$tran=new umTransaction;
 	$tran->key="AAAAABBBBBBCCCCCCDDDDDDEEEEEEEE";  
 	$tran->card="4444555566667779";	

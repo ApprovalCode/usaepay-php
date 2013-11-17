@@ -1,16 +1,13 @@
 <?php
-// USA ePay PHP Library.
+// Approval Code PHP Library.
 //      v1.6
-//
-//      Copyright (c) 2002-2008 USA ePay
-//      For support please contact devsupport@usaepay.com
 //
 //  The following is an example of running a transaction using the php library.
 //  Please see the README file for more information on usage.
 //
 
 // Change this path to the location you have save usaepay.php to
-include "./usaepay.php";
+include "./approvalcode.php";
 
 // Instantiate USAePay client object
 $tran=new umTransaction;
