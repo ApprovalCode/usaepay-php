@@ -9,20 +9,21 @@
 // Change this path to the location you have save usaepay.php to
 include "./approvalcode.php";
 
-// Instantiate USAePay client object
+// Instantiate Approval Code client object
 $tran=new umTransaction;
 
 // Merchants Source key must be generated within the console
 $tran->key="897asdfjha98ds6f76324hbmnBZc9769374ybndfs876";
+//$tran->pin="optional";
 
 // Send request to sandbox server not production.  Make sure to comment or remove this line before
 //  putting your code into production
-$tran->usesandbox=true;    
+$tran->usesandbox=true;
 
-$tran->card="4005562233445564";		
-$tran->exp="0312";			
-$tran->amount="1.00";			
-$tran->invoice="1234";   		
+$tran->card="4000100011112224";		
+$tran->exp="0914";			
+$tran->amount="3.00";			
+$tran->invoice="1236";   		
 $tran->cardholder="Test T Jones"; 	
 $tran->street="1234 Main Street";	
 $tran->zip="90036";			

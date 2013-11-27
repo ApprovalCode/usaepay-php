@@ -25,10 +25,10 @@ $tran->testmode=0;    // Change this to 0 for the transaction to process
 $tran->usesandbox=1;
  
 $tran->amount="10.00";			// charge amount in dollars
-$tran->invoice="1234";   		// invoice number.  must be unique.
+$tran->invoice="1238";   		// invoice number.  must be unique.
  
 $tran->description="Online Order";	// description of charge
-$tran->refnum="47100443"; //refnum stored from the $tran->refnum of a previous transaction
+$tran->refnum="58895744"; //refnum stored from the $tran->refnum of a previous transaction
  
  
 echo "<h1>Please wait one moment while we process your card...<br>\n";
