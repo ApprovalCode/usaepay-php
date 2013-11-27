@@ -1,6 +1,6 @@
 <?php
-// Approval Code PHP Library.
-//	v1.6.13 - Jun 25th, 2013
+// Approval Code PHP Library based on USAePay library
+// v1.6.13 - Jun 25th, 2013
 //
 //
 
@@ -390,7 +390,7 @@ class umTransaction {
 	}
 	
 	/**
-	 * Send transaction to the USAePay Gateway and parse response
+	 * Send transaction to the Approval Code Gateway and parse response
 	 *
 	 * @return boolean
 	 */
@@ -769,7 +769,7 @@ class umTransaction {
 		}
 		
 		// Look for usesandbox
-		if($this->usesandbox) $url = "https://sandbox.usaepay.com/interface/profiler/";
+		if($this->usesandbox) $url = "https://sandbox.approvalcode.com/interface/profiler/";
 		
 		// Add request paramters
 		$url .=  $action . '?SourceKey=' . rawurlencode($this->key) . '&Hash=' . rawurlencode($hash);
@@ -810,7 +810,7 @@ class umTransaction {
 	}
 	
 	/**
-	 * Verify Proper Installation of USAePay class and required PHP Support
+	 * Verify Proper Installation of Approval Code class and required PHP Support
 	 *
 	 */
 	function Test()
@@ -871,7 +871,7 @@ class umTransaction {
 			} else {
 				?><font color="red">Error</font><br>
 				It appears that your curl installation does not include support for the HTTPS (ssl) protocal
-				Proper SSL installation is required to communicate with the USAePay gateway securely.  Please recompile curl
+				Proper SSL installation is required to communicate with the Approval Code gateway securely.  Please recompile curl
 				with SSL support.
 				<?php
 			}
@@ -900,7 +900,7 @@ class umTransaction {
 					if($return["UMversion"]) {
 						$ssl_failed=false;
 						?><font color="green">Ok</font><br>
-						Successfully connected to the gateway.  Detected version (<?php echo $return["UMversion"]?>) of the USAePay gateway API.
+						Successfully connected to the gateway.  Detected version (<?php echo $return["UMversion"]?>) of the Approval Code gateway API.
 						<?php						
 					} else {
 						$ch = curl_init(($this->gatewayurl?$this->gatewayurl:"https://secure.approvalcode.com/secure/gate.php") . "?VersionCheck=1&UMsoftware=" . rawurlencode($this->software));
@@ -950,14 +950,14 @@ class umTransaction {
 								that you do not have DNS setup correctly.  Please correct your server configuration to include a valid
 								DNS server. As a temporary work around you may add the following to your script:<br><br><tt>
 								$tran->ignoresslcerterrors=true;<br>
-								$tran->gatewayurl="https://216.133.244.70/gate.php";<br>
+								$tran->gatewayurl="https://209.239.233.73/secure/gate.php";<br>
 								<br></tt>
 								<?php
 							} else {
 								?><font color="red">Failed</font><br>
-								Unable to establish connection to the USAePay Gateway.  It is possible that you are firewalling
+								Unable to establish connection to the Approval Code Gateway.  It is possible that you are firewalling
 								outbound traffic from your server.  To correct this problem,  you must add an allow entry in
-								your firewall for ip <?php echo gethostbyname("www.usaepay.com")?> on port 443;
+								your firewall for ip <?php echo gethostbyname("secure.approvalcode.com")?> on port 443;
 								<?php								
 								
 							}
@@ -1286,7 +1286,7 @@ class umTransaction {
 	                . "Content-Length: " . strlen($data) . "\r\n",
 	            'content' => $data,
 	            'timeout' => ($this->timeout>0?$this->timeout:45),
-	            'user_agent' => 'uePHPLibary v' . USAEPAY_VERSION . ($this->software?'/' . $this->software:'')
+	            'user_agent' => 'uePHPLibary v' . APPROVALCODE_VERSION . ($this->software?'/' . $this->software:'')
 	        ),
 	        'ssl' => array(
 	            'verify_peer' => ($this->ignoresslcerterrors?false:true),
@@ -1357,6 +1357,4 @@ function _uePhpLibPrivateXMLEntities($num)
 	$num = ord($num);
 	return (($num > 127 && $num < 160) ? $chars[$num] : "&#".$num.";" );
 }
-
-
 ?>
