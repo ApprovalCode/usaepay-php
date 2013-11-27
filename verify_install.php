@@ -12,7 +12,7 @@
 
 
 // Change this path to match the location of your approvalcode.php file
-include "/home/approvalcode-php/approvalcode.php";
+include "./approvalcode.php";
 
 
 $tran=new umTransaction();
